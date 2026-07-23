@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Feedback Form</title>
+</head>
+<body>
+
+<h2>Feedback Form</h2>
+<textarea id="feedbackInput" rows="4" cols="40"></textarea><br><br>
+<button onclick="processFeedback()">Submit</button>
+
+<div id="result"></div>
+
+<script>
+  function processFeedback() {
+    var feedback = document.getElementById("feedbackInput").value;
+
+  
+    var trimmed = feedback.trim();
+
+    var lower = trimmed.toLowerCase();
+
+    var replaced = lower.replace("food", "ambience");
+
+    var position = replaced.indexOf("service");
+
+    var wordsArray = replaced.split(" ");
+
+    document.getElementById("result").innerHTML =
+      "Trimmed: " + trimmed + "<br>" +
+      "Lowercased: " + lower + "<br>" +
+      "Replaced: " + replaced + "<br>" +
+      "Position of 'service': " + position + "<br>" +
+      "Words array: " + JSON.stringify(wordsArray);
+  }
+</script>
+
+</body>
+</html>
