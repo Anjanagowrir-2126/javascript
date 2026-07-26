@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="check()">click</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+        function check() {
+
+            var order = {
+                itemName: "Headphones",
+                isDelivered: true,
+                daysSinceDelivery: 5 
+            };
+            document.getElementById("demo").innerHTML = (order.isDelivered && order.daysSinceDelivery <= 7)?"Eligible for Return" : "Return Period Expired";
+
+            console.log("itemName exists:","itemName" in order);
+            delete order.daysSinceDelivery;
+            console.log(order);
+        }
+        
+    </script>
+</body>
+</html>
