@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 1px solid black;
+            margin: auto;
+            padding-top: 40px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            width: 450px;
+            height: 400px;
+           
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+    <label>Rice
+        <input type="number" id="r1" placeholder="Enter Quantity">
+    </label>
+    <br><br>
+     <label>Sugar
+        <input type="number" id="s1" placeholder="Enter Quantity">
+    </label>
+     <br><br>
+     <label>Wheat
+        <input type="number" id="w1"  placeholder="Enter Quantity">
+    </label>
+    <br><br>
+
+    <button onclick="bill()">Calculate Bill</button>
+    <p id="result"></p>
+    <script>
+
+        function bill(){
+
+            var rp = 140;
+            var sp = 60;
+            var wp = 120;
+
+            var rq = Number(document.getElementById("r1").value);
+            var sq = Number(document.getElementById("s1").value);
+            var wq = Number(document.getElementById("w1").value);
+
+            var rc = rp*rq;
+            var sc = sp*sq;
+            var wc = wp*wq;
+
+            var total = rc + sc + wc;
+
+            console.log("Cost =" + rc);
+            console.log(" Cost =" + sc);
+            console.log(" Cost =" + wc);
+
+            var total = rc + sc + wc;
+            console.log("Total Bill =" + total);
+
+            rq = rq + 1;
+
+            rc = rp * rq;
+            total = rc + sc + wc;
+
+            console.log("Updated Total Bill =" + total);
+
+        }
+        
+    </script>
+    </div>
+</body>
+</html>
