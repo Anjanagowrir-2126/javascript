@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings</title>
+</head>
+<body>
+
+    <p>The Total Earnings :</p>
+    <p id="d1"></p>
+
+    <p>Updated Total Earnings :</p>
+    <p id="d2"></p>
+
+    <script>
+
+        var x = 400;
+        var y = 150;
+
+        var t = 5;
+        var c = 3;
+
+        sum = x * t + y * c;
+        document.getElementById("d1").innerHTML = sum + "/-"; 
+
+        x = 450;
+
+        sum = x * t + y * c;
+        document.getElementById("d2").innerHTML = sum + "/-";
+
+    </script>
+
+</body>
+</html>
