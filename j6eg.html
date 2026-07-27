@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Animals</h1> -->
+     <p id="demo"></p>
+
+    <script>
+    //     var animals = ["Cat","Dog","Lion","Tiger"];
+    //     animals.pop()
+    //     animals.pop()
+    //     animals.push("Guava")
+    //     delete animals[0]
+
+    // console.log(animals[0])
+    // console.log(animals[1])
+    // console.log(animals[2])
+    // console.log(animals[3])
+
+    // console.log(animals.length)
+    let empDetails = [
+    {name:"Abhi", age:21, isActive: true},
+    {name:"jishnu", age:25, isActive: true},
+    {name:"sreejith", age:19, isActive: false},
+]
+var active = empDetails.filter(myfn);
+
+document.getElementById("demo").innerHTML= active;
+
+function myfn(value,index,array){
+    return value.isActive==true;
+}
+
+// console.log(empDetails[0].name)
+// console.log(empDetails[1].name)
+// console.log(empDetails[2].name)
+
+
+    </script>
+</body>
+</html>
