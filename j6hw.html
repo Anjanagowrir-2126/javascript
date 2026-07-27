@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    
+    <div id="q1"></div>
+    <div id="q2"></div>
+    <div id="q3"></div>
+    <div id="q4"></div>
+    <div id="q5"></div>
+    <div id="q6"></div>
+
+    <script>
+        var studentName = ["Anjana", "Ajay", "Anjima", "Akshay"];
+        var studentMark = [85, 92, 90, 85];
+
+        var displayDetails = "<h3>1. All Names:</h3>";
+        studentName.forEach(function(myfn){
+            displayDetails = displayDetails + myfn + "<br>";
+        });
+        document.getElementById("q1").innerHTML = displayDetails;  
+
+        var passedStudents = studentName.filter(function(name, index){
+            return studentMark[index] > 60;
+        });
+
+        var passedDetails = "<h3>2. Students Scoring > 60:</h3>";
+        passedStudents.forEach(function(name){
+            passedDetails = passedDetails + name + "<br>";
+        });
+        document.getElementById("q2").innerHTML = passedDetails;
+
+        var sum = studentMark.reduce(myfun);
+        function myfun(total, value, index, array) {
+            return total + value;
+        }
+        document.getElementById("q3").innerHTML = "<h3>3. Total Score:</h3>" + sum;
+
+        var over35 = studentMark.every(myfun1);
+        function myfun1(value, index, array) {
+            return value > 35;
+        }
+        document.getElementById("q4").innerHTML = "<h3>4. All students scored above 35?</h3>" + over35;
+
+        var atleastOne = studentMark.some(myFunction);
+        function myFunction(value, index, array) {
+            return value > 90;
+        }
+        document.getElementById("q5").innerHTML = "<h3>5. At least one student scored > 90?</h3>" + atleastOne;
+
+        var students = studentName.map(function(name, index) {
+            return {
+                name: name,
+                score: studentMark[index]
+            };
+        });
+
+        students.sort(function(a, b) {
+            return b.score - a.score;
+        });
+
+        var sortedStudents = "<h3>6. Students Sorted by Score (Descending):</h3>";
+        students.forEach(function(student) {
+            sortedStudents += student.name + " - " + student.score + "<br>";
+        });
+        document.getElementById("q6").innerHTML = sortedStudents;
+    </script>
+</body>
+</html>

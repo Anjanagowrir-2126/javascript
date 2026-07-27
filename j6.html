@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,5 +52,55 @@
 
         document.getElementById("demo").innerHTML = displayItems;
         </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Online Grocery Store</h1>
+    <p id="demo"></p>
+
+    <script>
+        var productName = ["Apple","Milk","Biscuit"];
+        var productPrice =[50,28,60];
+      
+        var productDetails = [];
+
+        productName.forEach(function(name, index){
+            var formattedList = "Product: " + name + "- Price: " + productPrice[index];
+            productDetails.push(formattedList);
+        });
+
+        var displayItems = "<h3>All Products: </h3>";
+        productDetails.forEach(function(items){
+            displayItems = displayItems + items + "<br>";
+        });
+       
+        displayItems = displayItems + "<h3>Products > 50:</h3>";
+
+        var over50 = productDetails.filter(function(items, index) {
+            return productPrice[index] > 50;
+        });
+
+        displayItems = displayItems + (over50.length === 0 ? "None found.<br>" : over50.join("<br>") + "<br>");
+
+        productName.push("Watermelon");
+        productPrice.push(80);
+
+        productDetails.push("Product: Watermelon - Price: 80");
+
+        displayItems = displayItems + "<h3>Updated Product List:</h3>";
+
+        productDetails.forEach(function(item) {
+            displayItems = displayItems + item + "<br>";
+        });
+
+        document.getElementById("demo").innerHTML = displayItems;
+    </script>
 </body>
 </html>
