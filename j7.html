@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Tracker</title>
+</head>
+<body>
+
+<h2>Birthday</h2>
+<p id="demo"></p>
+
+<script>
+    var friend = {
+        name: "Ajay",
+        birthDate: "2000-04-16"
+    };
+
+    function getBirthdayDetails(friend) {
+
+        var dob = new Date(friend.birthDate);
+
+        var year = dob.getFullYear();
+        var day = dob.getDate();
+
+        var months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        var monthName = months[dob.getMonth()];
+
+        var today = new Date();
+
+        var age = Math.floor((today - dob) / (1000 * 60 * 60 * 24 * 365.25));
+
+        document.getElementById("demo").innerHTML =
+            friend.name + " was born on " + day + " " + monthName + ", " +
+            year + " and is " + age + " years old.";
+    }
+
+    getBirthdayDetails(friend);
+</script>
+
+</body>
+</html>
