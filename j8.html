@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="i">
+    <label>Enter Product Code
+        <input type="text" id="pc" placeholder="eg:code1">
+    </label><br><br>
+    <label>Enter Product Quantity
+        <input type="text" id="pq" placeholder="eg:2">
+    </label><br><br>
+
+    <button onclick="calculate()">Purchase</button>
+    </div>
+    <script>
+
+        let i;
+        function calculate(){
+            for(i=0;i<5;i++)
+        {
+            let pc = Number(document.getElementById("pc").value)
+            let pq = Number(document.getElementById("pq").value)
+
+            let price = 0;
+            let product = "";
+
+            switch(pc)
+            {
+                case 1 : 
+                product = "Apple";
+                price = 30;
+                break;
+
+                case 2 : 
+                product = "Banana";
+                price = 10;
+                break;
+
+                case 3 : 
+                product = "Mango";
+                price = 50;
+                break;
+
+                default :
+                console.log("Invalid Product Code");
+                continue;
+            }
+            let total = price * pq;
+
+            console.log("Product :", product);
+            console.log("Quantity :", pq);
+            console.log("Total Price :", total);
+
+            if(total>100)
+         {
+            console.log("High Purchase");
+         }
+         else
+         {
+            console.log("Normal Purchase");
+         }
+        }
+ 
+        }
+        
+    </script>
+</body>
+</html>
