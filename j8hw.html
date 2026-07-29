@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="guess()">Guess</button>
+   <script>
+    
+     function guess(){
+        let validChance = 0;
+        for(;validChance<5;)
+     {
+      let play =Number(prompt("Enter a number between 1 to 5"));
+     
+if(play<1 || play>5)
+{
+    console.log("Invalid input");
+    continue;
+}
+      validChance++;
+        switch(play)
+        {
+            case 1:
+                console.log("one");
+                break;
+                 case 2:
+                console.log("Two");
+                break;
+                 case 3:
+                console.log("Three");
+                break;
+                 case 4:
+                console.log("Four");
+                break;
+                 case 5:
+                console.log("Five");
+                break;
+                default:
+                    console.log("Invalid input");
+                    continue;
+        }
+            if(play==3)
+        {
+            console.log("you guessed it right!");
+            break;
+        }
+        else
+        {
+            console.log("Wrong guess. Try again");
+        }        
+       
+        if(validChance== 5)
+        {
+            console.log("Game over");
+        }
+     }
+}
+   </script>
+</body>
+</html>
