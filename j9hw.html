@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <label>Comments: 
+        <textarea rows="5"cols = "18" id="comment"   placeholder="Comment Here : "></textarea>
+    <button onclick="regexp1()">Submit</button>
+</label>
+    <script>
+        function regexp1(){
+            let str = document.getElementById("comment").value;
+            let txt = str.replace(/bad|ugly|stupid/ig,"***");
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
+
