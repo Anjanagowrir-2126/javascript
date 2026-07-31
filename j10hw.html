@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+<body>
+
+<script>
+    let jsonText = `{
+        "name": "Anjana",
+        "email": "anjanagowrir@gmail.com",
+        "feedback": "Thank you for your support!"
+    }`;
+
+ 
+    const check = () => {
+        try {
+            let obj = JSON.parse(jsonText);
+
+            if (obj.feedback.toLowerCase().includes("thank")) {
+                console.log("Positive feedback received");
+            } else {
+                console.log("Feedback noted");
+            }
+
+        } catch (error) {
+            console.log("Error: Invalid JSON");
+        }
+    };
+
+    
+    check();
+</script>
+
+</body> 
+</html>
