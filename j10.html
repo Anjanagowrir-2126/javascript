@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let jsonText = `{
+            "name": "Anjana",
+            "email": "anjanagowrir@gmail.com",
+            "message": "Hello World"
+        }`;
+ 
+        let obj = JSON.parse(jsonText);
+
+
+      let demo = () => {
+       
+        
+       }
+       try{
+        let obj = JSON.parse(jsonText);
+      console.log("Message received from" + " " + obj.name);
+      console.log(obj.email);
+      console.log(obj.message);
+}
+catch (error) {
+    console.log("Error: Invalid JSON");
+}
+    
+    </script>
+</body>
+</html>
