@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    
+    <label>Enter Email:
+        <input type="text" id="emailReg" oninput="verify()">
+    </label>
+    
+    <button onclick="verify()">Verify</button>
+    <p id="demo"></p>
+
+    <script>
+        function verify(){
+            const email =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            text = document.getElementById("emailReg").value;
+        
+            if(email.test(text))
+        
+        {
+            document.getElementById("demo").innerHTML="Email is in Correct Pattern";
+            document.getElementById("demo").style.color = "green";
+        }
+        else{
+
+            document.getElementById("demo").innerHTML="Email is in Wrong Pattern";
+             document.getElementById("demo").style.color = "red";
+        }
+        }
+        
+    </script>
+      
+</body>
+</html>
