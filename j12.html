@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+
+<form onsubmit="showFeedback(); return false;">
+    Name:
+    <input type="text" id="name"><br><br>
+
+    Feedback:
+    <textarea id="feedback"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<h3>Feedback</h3>
+
+<p id="display" onmouseover="blue()" onmouseout="black()"></p>
+
+<p id="msg"></p>
+
+<script>
+    function showFeedback() {
+        let name = document.getElementById("name").value;
+        let feedback = document.getElementById("feedback").value;
+
+        document.getElementById("display").innerHTML =
+        "Name: " + name + "<br>Feedback: " + feedback;
+
+        document.getElementById("msg").innerHTML =
+        "Thanks for your feedback!";
+        document.getElementById("msg").style.color = "green";
+
+        setTimeout(clearMessage, 5000);
+    }
+
+    function clearMessage() {
+        document.getElementById("msg").innerHTML = "";
+    }
+
+    function blue() {
+        document.getElementById("display").style.color = "blue";
+    }
+
+    function black() {
+        document.getElementById("display").style.color = "black";
+    }
+</script>
+
+</body>
+</html>
