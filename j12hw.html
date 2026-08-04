@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Events</title>
+</head>
+<body>
+
+<form onsubmit="showText(); return false;">
+    <input type="text" id="input1">
+    <input type="submit" value="Submit">
+    
+</form>
+
+<p id="p1" onmouseover="green()" onmouseout="blue()"></p>
+
+<script>
+    function showText() {
+        document.getElementById("p1").innerHTML =
+        document.getElementById("input1").value;
+        document.getElementById("input1").focus();
+
+        document.getElementById("p1").style.color = "blue";
+    }
+
+    function green() {
+        document.getElementById("p1").style.color = "green";
+    }
+
+    function blue() {
+        document.getElementById("p1").style.color = "blue";
+    }
+</script>
+
+</body>
+</html>
