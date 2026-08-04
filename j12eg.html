@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input1 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1"  ondblclick="editText()">Hello World!</p>
+    <input type="text" id="input1" value="Hello World!"  onblur="saveText()">
+
+    <script>
+        function editText() {
+            document.getElementById("p1").style.display = "none";
+            document.getElementById("input1").style.display = "block";
+            document.getElementById("input1").focus();
+        }
+
+        function saveText() {
+            let text = document.getElementById("input1").value;
+            document.getElementById("p1").innerHTML = text;
+            document.getElementById("p1").style.display = "block";
+            document.getElementById("input1").style.display = "none";  
+        }
+    </script>
+</body>
+</html>

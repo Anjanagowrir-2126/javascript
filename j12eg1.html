@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="p1" ondblclick="editText()">Hello World!</p>
+
+<input type="text" id="input1" value="Hello World!" hidden onblur="saveText()">
+
+<script>
+function editText() {
+    p1.hidden = true;
+    input1.hidden = false;
+    input1.focus();
+}
+
+function saveText() {
+    p1.innerHTML = input1.value;
+    p1.hidden = false;
+    input1.hidden = true;
+}
+</script>
+
+</body>
+</html>
